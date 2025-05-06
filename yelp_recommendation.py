@@ -1,21 +1,10 @@
-# Cameron Ela, ceela@usc.edu
-# DSCI 553, Spring 2025
-# Competition Project
 """
 Method Description:
 I used a model-based approach for this project. In my testing, I found that my validation set error only increased when
-including collaborative filtering to have a hybrid approach. As I lowered the threshold for number of reviews needed to
+including collaborative filtering to have a hybrid approach. As I lowered the threshold for the number of reviews needed to
 use the XGBRegressor instead of collaborative filtering, RMSE continued to drop. The continuous drop in RMSE confirmed
 my suspicion that my collaborative filtering algorithm was not helpful in this case, and a hybrid approach would not be
-ideal. From homework 3 to this project, I added the 'elite' field from user.json as a feature since it legitimizes a
-user's popularity and therefore, perhaps, is a good indicator of how a restaurant should be rated. Adding this field,
-holding all else equal and before making the following changes, had the biggest impact on reducing RMSE. My original
-XGBRegressor model submitted with homework 3 was built from cross validation on maximum tree depth, number of trees,
-and column sample size per tree. This time, to aid the column sampling in preventing overfitting, I added an L1
-regularization term to search for in cross-validation of hyperparameters for XGBRegressor. The addition of the L1
-regularization parameter (alpha) in the final model had minor positive impact for RMSE. Additionally, I tried adding
-number of likes on tips for both users and businesses as features but realized it is confounding with the number of
-tips, making number of likes on tips unnecessary.
+ideal.
 
 Error Distribution:
 >=0 and <1: 102083
